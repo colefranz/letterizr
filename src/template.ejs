@@ -4,12 +4,21 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <div id="main">
-      <div>
-        <h1 v-if="current !== ''">{{current}}</h1>
+    <div v-cloak id="main">
+      <div id="letter-container">
+        <transition name="spin-shrink">
+          <h1 v-if="initialized && current !== ''">{{current}}</h1>
+          <h2 v-if="initialized === false">Click below to start</h2>
+        </transition>
       </div>
-      <button @click="randomize()">Click me!</button>
-      <button @click="reset()">Reset</button>
+      <div id="controls">
+        <div class="button primary" @click="randomize()">Randomize!</div>
+        <div class="button secondary" @click="reset()">
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!-- Created with Inkscape (http://www.inkscape.org/) -->
+          <svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><g transform="translate(0,8)"><path transform="translate(0,-8)" d="m12.221 2.084c-4.0769-0.16837-7.9716 2.2087-9.6816 6.0742-1.9543 4.4177-0.53812 9.5953 3.3945 12.309l1.7246-2.4648c-2.7508-1.8979-3.7546-5.5199-2.3672-8.6562 1.3875-3.1364 4.7404-4.8412 8.0039-4.1094 3.2636 0.73182 5.5097 3.69 5.3574 7.1016-0.13167 2.9491-2.0353 5.4641-4.6973 6.4395v-1.4941l-3.9336 3 3.9336 3v-1.4004c3.17-0.79587 5.7313-3.0603 6.9453-6.0059 0.44023-1.0681 0.70218-2.2254 0.75586-3.4277 0.21474-4.8095-3.0111-9.087-7.6836-10.135-0.58406-0.13097-1.1695-0.20642-1.752-0.23047z" color="#000000" color-rendering="auto" dominant-baseline="auto" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/></g></svg>
+        </div>
+      </div>
     </div>
   </body>
 </html>

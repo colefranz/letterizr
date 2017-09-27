@@ -13,6 +13,7 @@
     "webpack": "^3.6.0"
   },
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch"
   }
 }

@@ -36,6 +36,17 @@
           include: [
             path.resolve(__dirname, 'src')
           ]
+        }, {
+          test: /\.(wav)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'sounds/'
+              }
+            }
+          ]
         }
       ]
     },
